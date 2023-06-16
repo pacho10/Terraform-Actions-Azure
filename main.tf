@@ -7,6 +7,13 @@ terraform {
       version = "=3.0.1"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "StorageRG"
+    storage_account_name = "taskboardstorage"
+    container_name       = "taskboardcontainer"
+    key                  = "terraform.tfstate"
+  }
 }
 
 # Configure the Microsoft Azure Provider
